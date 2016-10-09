@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Please, enter yout TODO item:</p>
+
+<input id="inputForItems" type="text">
+<button onclick="addItemToList()">ADD</button>
+
+<ul id="todoItems"></ul>
+
+<script>
+function addItemToList(){
+     var todoItemText = document.getElementById("inputForItems").value;
+     if(todoItemText != "")
+     {
+          var item = document.createElement("li"); 
+          var itemText = document.createTextNode(todoItemText);      
+          item.appendChild(itemText); 
+          var remBtn = document.createElement("button");       
+          remBtn.appendChild(document.createTextNode("done"));
+          item.appendChild(remBtn);
+          remBtn.onclick = function(){this.parentNode.parentNode.removeChild(this.parentNode);}     
+          document.getElementById("todoItems").appendChild(item); 
+          document.getElementById("inputForItems").value = "";
+     }
+}
+
+</script>
+
+</body>
+</html>
