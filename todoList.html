@@ -21,7 +21,7 @@ function addItemToList(){
           item.appendChild(remBtn);
           remBtn.onclick = function(){this.parentNode.parentNode.removeChild(this.parentNode);}     
           document.getElementById("todoItems").appendChild(item); 
-          document.getElementById("inputForItems").value = "";
+          todoItemText = "";
      }
 }
 
